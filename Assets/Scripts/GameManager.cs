@@ -179,8 +179,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] float finishLevelDelay;
     bool loadingScene = false;
     ///<summary> 0-Tutorial 1-Level 2-No Enemies 3-All Levels </summary>
-    public int mode = 0; 
+    public int mode = 0;
+#if UNITY_EDITOR
+    public static bool developerMode = true;
+#else
     public static bool developerMode = false;
+#endif
     float timeMeasure;
 
 

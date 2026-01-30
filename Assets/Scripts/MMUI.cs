@@ -105,7 +105,13 @@ public class MMUI : MonoBehaviour
         level.transform.Find("Lock").gameObject.SetActive(lockLevel);
     }
 
-    #region DEVELOPER UI
+    public void GameProgressReset()
+    {
+        GameProgress.ResetGameProgress();
+        UpdateMenu();
+    }
+
+    //DEV UI:
     public TextMeshProUGUI gpcText; //game progress count text
     [SerializeField] GameObject devProgressTool;
 
@@ -120,11 +126,6 @@ public class MMUI : MonoBehaviour
             UpdateMenu();
         }
     }
-    public void GameProgressReset()
-    {
-        GameProgress.ResetGameProgress();
-        UpdateMenu();
-    }
     private void Update()
     {
         #region DEVELOPER MODE
@@ -136,5 +137,4 @@ public class MMUI : MonoBehaviour
         }
         #endregion
     }
-    #endregion
 }
